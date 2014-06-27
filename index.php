@@ -1,11 +1,12 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta author="Igor Ostrowski" />
     <title>Countries and Languages</title>
 </head>
     <body>
         <div>
-            <h1>Countries and languages</h1>
+            <h1>Countries and Languages</h1>
         </div>
         <div> 
             <a href="/countries">Countries</a>
