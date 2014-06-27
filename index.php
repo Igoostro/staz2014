@@ -5,7 +5,7 @@
     <title>Countries and Languages</title>
 </head>
     <body>
-        <div>
+        <div id="main">
             <h1>Countries and Languages</h1>
         </div>
         <div> 
