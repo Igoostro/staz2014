@@ -27,6 +27,14 @@
             <tr><td>Continent</td><td>Country</td><td>Language</td><td>Population</td><td>Official Language Use %</td><td>Official Language Population Use</td><td>&nbsp;</td></tr>
             
         <?php
+        //testy start
+        
+        $query3 = "SELECT * FROM countryLanguage";
+        $result3 = pg_query($connect, $query3) or die("Nie mozna wykonac zapytania: $query3\n");
+        while ($row3 = pg_fetch_row($result3)){
+            echo "$row3[0] $row3[1] $row3[2] $row3[3]";
+        }
+        //testy stop
         while ($row1 = pg_fetch_row($result1)){
             //Zbieranie danych z tabeli countryLanguage
             $query2 = "SELECT language, percentage FROM countryLanguage WHERE isofficial=true AND countrycode=$row1[3] ORDER BY percentage DESC";
