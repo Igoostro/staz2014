@@ -8,9 +8,10 @@
 </head>
     <body>
         <div id="top">
-            <h1>Countries and Languages</h1>
+            <h1>Countries and languages</h1>
         </div>
         <?php
+        //Dodanie linków
         include 'links.php';
         ?>
     </body>
