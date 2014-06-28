@@ -37,7 +37,7 @@
         //testy stop
         while ($row1 = pg_fetch_row($result1)){
             //Zbieranie danych z tabeli countryLanguage
-            $query2 = "SELECT language, percentage FROM countryLanguage WHERE isofficial=t AND countrycode LIKE $row1[3] ORDER BY percentage DESC";
+            $query2 = "SELECT language, percentage FROM countryLanguage WHERE isofficial=t AND countrycode=$row1[3] ORDER BY percentage DESC";
             $result2 = pg_query($connect, $query2) or die("Nie mozna wykonac zapytania: $query2\n");
             
             while ($row2 = pg_fetch_row($result2)){
