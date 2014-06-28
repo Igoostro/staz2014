@@ -31,7 +31,7 @@
         <?php
         while ($row1 = pg_fetch_row($result1)) {
             //Zbieranie danych z tabeli countryLanguage
-            $query2 = "SELECT language, percentage FROM countryLanguage WHERE isofficial=true, countrycode=$row1[3] ORDER BY population DESC";
+            $query2 = "SELECT language, percentage FROM countryLanguage WHERE isofficial=true && countrycode=$row1[3] ORDER BY population DESC";
             $result2 = pg_query($connect, $query2);
             if(!$result2)
                 echo "Błąd 2\n";
