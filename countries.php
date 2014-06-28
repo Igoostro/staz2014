@@ -29,13 +29,13 @@
             <tr><td>Continent</td><td>Country</td><td>Language</td><td>Population</td><td>Official Language Use %</td><td>Official Language Population Use</td><td>&nbsp;</td></tr>
             
         <?php
-        while ($row1 = pg_fetch_row($result1)) {
+        while ($row1 = pg_fetch_row($result1)){
             //Zbieranie danych z tabeli countryLanguage
-            $query2 = "SELECT language, percentage FROM countryLanguage WHERE isofficial=true && countrycode=$row1[3] ORDER BY population DESC";
+            $query2 = "SELECT language, percentage FROM countryLanguage WHERE isofficial=true AND countrycode='$row1[3]' ORDER BY population DESC";
             $result2 = pg_query($connect, $query2);
             if(!$result2)
                 echo "Błąd 2\n";
-            while ($row2 = pg_fetch_row($result2)) {
+            while ($row2 = pg_fetch_row($result2)){
                 echo "<tr><td>$row1[0]</td><td>$row1[1]</td><td>$row2[0]</td><td>$row1[2]</td><td>$row2[1]</td><td>($row1[2]*$row2[1]/100)</td><td>Details</td></tr>";
                 //TO DO zaokraglenia!! 
             }
