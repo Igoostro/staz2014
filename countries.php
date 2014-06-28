@@ -29,15 +29,15 @@
         <?php
         //testy start
         
-        $query3 = "SELECT * FROM countryLanguage";
-        $result3 = pg_query($connect, $query3) or die("Nie mozna wykonac zapytania: $query3\n");
-        while ($row3 = pg_fetch_row($result3)){
-            echo "$row3[0] $row3[1] $row3[2] $row3[3]";
-        }
+        //$query3 = "SELECT * FROM countryLanguage";
+        //$result3 = pg_query($connect, $query3) or die("Nie mozna wykonac zapytania: $query3\n");
+        //while ($row3 = pg_fetch_row($result3)){
+        //    echo "$row3[0] $row3[1] $row3[2] $row3[3]";
+        //}
         //testy stop
         while ($row1 = pg_fetch_row($result1)){
             //Zbieranie danych z tabeli countryLanguage
-            $query2 = "SELECT language, percentage FROM countryLanguage WHERE isofficial=true AND countrycode=$row1[3] ORDER BY percentage DESC";
+            $query2 = "SELECT language, percentage FROM countryLanguage WHERE isofficial=true AND countrycode LIKE $row1[3] ORDER BY percentage DESC";
             $result2 = pg_query($connect, $query2) or die("Nie mozna wykonac zapytania: $query2\n");
             
             while ($row2 = pg_fetch_row($result2)){
