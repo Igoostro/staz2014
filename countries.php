@@ -41,7 +41,8 @@
             $result2 = pg_query($connect, $query2) or die("Nie mozna wykonac zapytania: $query2\n");
             
             while ($row2 = pg_fetch_row($result2)){
-                echo "<tr><td>$row1[0]</td><td>$row1[1]</td><td>$row2[0]</td><td>$row1[2]</td><td>$row2[1]</td><td>($row1[2]*$row2[1]/100)</td><td>Details</td></tr>";
+                $temportary = $row1[2]*$row2[1]/100;
+                echo "<tr><td>$row1[0]</td><td>$row1[1]</td><td>$row2[0]</td><td>$row1[2]</td><td>$row2[1]</td><td>$temportary</td><td>Details</td></tr>";
                 //TO DO zaokraglenia!! 
             }
         }
