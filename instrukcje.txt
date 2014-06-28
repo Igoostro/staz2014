@@ -1,0 +1,10 @@
+Strona '/countries'
+
+Powinna implementować template ze strony '/' oraz tabelę zawierającą informację o językach oficjalnych w krajach 
+(każdy język oficjalny powinien być wypisany w oddzielnym wierszu tabeli, jeśli dany kraj ma więcej niż jeden język 
+powinien zostać wypisany tyle razy ile ma języków oficjalnych). tabela powinna być posortowana to nazwie kontynentu rosnąco, 
+nazwie kraju rosnąco oraz procentowym udziale w liczbie ludności malejąco. Tabela powinna mieć sekcję thead oraz 7 komórek: 
+'Continent', 'Country', 'Language', 'Population', 'Official Language Use %', 'Official Language Population Use', '&nbsp;' 
+oraz sekcję tbody, w której komórki odpowiednio zawierają: nazwę kontynentu, nazwę kraju, język, liczbę ludności w danym kraju, 
+ile procent osób korzysta z języka oficjalnego (zaokrąglone do 2 miejsc po przecinku), ile osób korzysta z języka oficjalnego 
+(zaokrąglone do dołu, do pełnej liczby naturalnej) oraz link o tekście 'Details' do '/country/:countryCode' (3 znakowy country code).
