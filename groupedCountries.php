@@ -63,6 +63,10 @@
                         
                     $lastLang = $row1[0];//Nowy -> Stary jezyk
                 }
+                //Wyswietlenie ostatniego pobranego jezyka:
+                $totalLangPopRound = floor($totalLangPop);
+                $GloPopPerUse = round($totalLangPop/$totalPop*100, 2);
+                echo "<tr><td>$lastLang</td><td>$totalLangPopRound</td><td>$GloPopPerUse</td></tr>";
                 ?>
         
             </tbody>
