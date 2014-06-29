@@ -40,7 +40,6 @@
                         $offLanUsePer = round($row2[1], 2);
                         $offLanPopUse = floor($row1[2]*$row2[1]/100);
                         echo "<tr><td>$row1[0]</td><td>$row1[1]</td><td>$row2[0]</td><td class='numbers'>$row1[2]</td><td class='numbers'>$offLanUsePer</td><td class='numbers'>$offLanPopUse</td><td id='details'>Details</td></tr>";
-                        //TO DO zaokraglenia!! 
                     }
                 }
         
