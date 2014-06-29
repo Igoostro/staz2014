@@ -15,8 +15,14 @@ a{
     text-decoration: none;
 }
 table{
+    width: 1000px;
     border-collapse: collapse;
     margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table#thin{
+    width: 500px;
 }
 th{
     border: 1px black solid;
