@@ -14,3 +14,23 @@ a{
     margin: 0 50px;
     text-decoration: none;
 }
+table{
+    border-collapse: collapse;
+    margin-top: 50px;
+}
+th{
+    border: 1px black solid;
+}
+td{
+    padding: 2px 2px 2px 5px;
+    border: 1px black solid;
+}
+td.numbers{
+    text-align: right;
+}
+td#details{
+    border-bottom: 1px black solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
