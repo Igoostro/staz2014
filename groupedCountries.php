@@ -47,21 +47,20 @@
                         $lastLang = $row1[0];
                     }
                     //Jesli jezyk juz wystapil:
-                    if($row1[0] == $lastLang){
-                        //Zbieranie populacji danego kraju z tabeli country
-                        $query2 = "SELECT population FROM country WHERE code='$row1[1]'";
-                        $result2 = pg_query($connect, $query2) or die("Nie mozna wykonac zapytania: $query2\n");
-                        while ($row2 = pg_fetch_row($result2)){
-                            $totalLangPop += ($row2[0] * $row1[2]) / 100;//Populacja kraju * procentowy udzial jezyka / 100
-                        }
-                    }
-                    else{
+                    if($row1[0] != $lastLang){
                         $totalLangPopRound = floor($totalLangPop);
                         $GloPopPerUse = round($totalLangPop/$totalPop*100, 2);
                         echo "<tr><td>$lastLang</td><td>$totalLangPopRound</td><td>$GloPopPerUse</td></tr>";
                  
                         $totalLangPop = 0;
                     }
+                    //Zbieranie populacji danego kraju z tabeli country
+                    $query2 = "SELECT population FROM country WHERE code='$row1[1]'";
+                    $result2 = pg_query($connect, $query2) or die("Nie mozna wykonac zapytania: $query2\n");
+                    while ($row2 = pg_fetch_row($result2)){
+                        $totalLangPop += ($row2[0] * $row1[2]) / 100;//Populacja kraju * procentowy udzial jezyka / 100
+                    }
+                        
                     $lastLang = $row1[0];//Nowy -> Stary jezyk
                 }
                 ?>
