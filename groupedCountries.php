@@ -24,6 +24,9 @@
             <tbody>
         
                 <?php
+                $col1 = array();
+                $col2 = array();
+                $col3 = array();
                 $connect = pg_connect("host=$host dbname=$db user=$user password=$pass") or die ("Blad polaczenia z baza\n");
          
                 //Zebranie danych o całości populacji z tabeli country
@@ -50,7 +53,10 @@
                     if($row1[0] != $lastLang){
                         $totalLangPopRound = floor($totalLangPop);
                         $GloPopPerUse = round($totalLangPop / $totalPop * 100, 2);
-                        echo "<tr><td>$lastLang</td><td class='numbers'>$totalLangPopRound</td><td class='numbers'>$GloPopPerUse</td></tr>";
+                        //echo "<tr><td>$lastLang</td><td class='numbers'>$totalLangPopRound</td><td class='numbers'>$GloPopPerUse</td></tr>";
+                        array_push($col1, $lastLang);
+                        array_push($col2, $totalLangPopRound);
+                        array_push($col3, $GloPopPerUse);
                  
                         $totalLangPop = 0;
                     }
@@ -66,13 +72,21 @@
                 //Wyswietlenie ostatniego pobranego jezyka:
                 $totalLangPopRound = floor($totalLangPop);
                 $GloPopPerUse = round($totalLangPop / $totalPop * 100, 2);
-                echo "<tr><td>$lastLang</td><td class='numbers'>$totalLangPopRound</td><td class='numbers'>$GloPopPerUse</td></tr>";
+                //echo "<tr><td>$lastLang</td><td class='numbers'>$totalLangPopRound</td><td class='numbers'>$GloPopPerUse</td></tr>";
+                array_push($col1, $lastLang);
+                array_push($col2, $totalLangPopRound);
+                array_push($col3, $GloPopPerUse);
                 
                 pg_free_result($result0);
                 pg_free_result($result1);
                 pg_free_result($result2);
                 pg_close($connect);
                 
+                //Ostateczne sortowanie i wyswietlenie
+                array_multisort($col1, $col2, $col3);
+                while(sizeof($col1)!=0){
+                    echo "<tr><td>array_pop($col1)</td><td class='numbers'>array_pop($col2)</td><td class='numbers'>array_pop($col3)</td></tr>";
+                }
                 //Suma 95,38 przez zaokraglenia
                 ?>
         
