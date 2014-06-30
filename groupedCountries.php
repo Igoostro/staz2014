@@ -83,7 +83,7 @@
                 pg_close($connect);
                 
                 //Ostateczne sortowanie i wyswietlenie
-                array_multisort($col3, $col2, $col1);
+                array_multisort($col3, $col1, $col2);
                 while(sizeof($col1)!=0){
                     echo '<tr><td>'.array_pop($col1).'</td><td class="numbers">'.array_pop($col2).'</td><td class="numbers">'.array_pop($col3).'</td></tr>';
                 }
