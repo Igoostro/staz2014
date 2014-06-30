@@ -42,7 +42,7 @@ $cd = htmlentities($_GET['code']);
         <br/><br/><br/><br/>
         <script type="text/javascript">
             
-        var w = 400, h = 400, r = 180, color = d3.scale.category20c();
+        var w = 300, h = 300, r = 180, color = d3.scale.category20c();
         
             data = [
             <?php
