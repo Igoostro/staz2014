@@ -10,9 +10,11 @@ div#top{
     margin-bottom: 50px;
 }
 a{
+    text-decoration: none;
+}
+a.template{
     font-size: 22px;
     margin: 0 50px;
-    text-decoration: none;
 }
 table{
     width: 1000px;

@@ -49,7 +49,7 @@
                     //Jesli jezyk juz wystapil:
                     if($row1[0] != $lastLang){
                         $totalLangPopRound = floor($totalLangPop);
-                        $GloPopPerUse = round($totalLangPop/$totalPop*100, 2);
+                        $GloPopPerUse = round($totalLangPop / $totalPop * 100, 2);
                         echo "<tr><td>$lastLang</td><td class='numbers'>$totalLangPopRound</td><td class='numbers'>$GloPopPerUse</td></tr>";
                  
                         $totalLangPop = 0;
@@ -65,10 +65,10 @@
                 }
                 //Wyswietlenie ostatniego pobranego jezyka:
                 $totalLangPopRound = floor($totalLangPop);
-                $GloPopPerUse = round($totalLangPop/$totalPop*100, 2);
+                $GloPopPerUse = round($totalLangPop / $totalPop * 100, 2);
                 echo "<tr><td>$lastLang</td><td class='numbers'>$totalLangPopRound</td><td class='numbers'>$GloPopPerUse</td></tr>";
                 
-                //Suma 95,38 hmmmmmmm zaokraglenia?
+                //Suma 95,38 przez zaokraglenia
                 ?>
         
             </tbody>
