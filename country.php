@@ -32,7 +32,6 @@ $cd = htmlentities($_GET['code']);
         $query1 = "SELECT language, percentage FROM countryLanguage WHERE countrycode='$cd'";
         $result1 = pg_query($connect, $query1) or die("Nie mozna wykonac zapytania: $query1\n");
         while ($row1 = pg_fetch_row($result1)){
-            echo "$row1[0] $row1[1] </br>";
             array_push($language, $row1[0]);
             array_push($percentage, $row1[1]);
         }
@@ -40,6 +39,7 @@ $cd = htmlentities($_GET['code']);
         pg_close($connect);
                 
         ?>
+        <br/><br/><br/><br/>
         <script type="text/javascript">
             
         var w = 400, h = 400, r = 180, color = d3.scale.category20c();
