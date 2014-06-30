@@ -51,14 +51,14 @@ while ($row0 = pg_fetch_row($result0)){
             
         var w = 360, h = 360, r = 180, color = d3.scale.category20c();
         
-            data = [
-            <?php
-            $i=0;
-            while(sizeof($language)!=0){
-                echo '{"label":"'.array_pop($language).'", "value":'.array_pop($percentage).'},';
-            }
-            ?>
-            ];
+        data = [
+        <?php
+        $i=0;
+        while(sizeof($language)!=0){
+            echo '{"label":"'.array_pop($language).'", "value":'.array_pop($percentage).'},';
+        }
+        ?>
+        ];
             
         var vis = d3.select("body")
         .append("svg:svg")
@@ -66,7 +66,7 @@ while ($row0 = pg_fetch_row($result0)){
         .attr("width", w)
         .attr("height", h)
         .append("svg:g")
-        .attr("transform", "translate(" + r + "," + r + ")")
+        .attr("transform", "translate(" + r + "," + r + ")");
  
         var arc = d3.svg.arc()
             .outerRadius(r);
@@ -78,7 +78,7 @@ while ($row0 = pg_fetch_row($result0)){
             .data(pie)
             .enter()
             .append("svg:g")
-            .attr("class", arc);
+            .attr("class", "slice");
  
         arcs.append("svg:path")
             .attr("fill", function(d, i) { return color(i); } )
@@ -93,8 +93,6 @@ while ($row0 = pg_fetch_row($result0)){
             .attr("text-anchor", "middle")
             .text(function(d, i) { return data[i].label; });
         
-</script>
-        
-        
+        </script>    
     </body>
 </html>
