@@ -47,14 +47,10 @@ $cd = htmlentities($_GET['code']);
         r = 100,                            //radius
         color = d3.scale.category20c();     //builtin range of colors
         
-        data = [
-            <?php
-            $i=0;
-            while(sizeof($language)!=0){
-                echo '{"label":"'.$language[$i].'", "value":'.$percentage[$i].'},';
-            }
-            ?>
-            ];
+            
+            data = [{"label":"one", "value":20}, 
+            {"label":"two", "value":50}, 
+            {"label":"three", "value":30}];
 
     
     var vis = d3.select("body")
