@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^country/([a-zA-Z]{3})$ country.php?code=$1 [QSA]
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
 RewriteRule ^(.*)$ $1.php
-RewriteRule ^country/[a-zA-Z]{3} country?code=$2 [QSA]
