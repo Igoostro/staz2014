@@ -78,7 +78,7 @@ while ($row0 = pg_fetch_row($result0)){
             .data(pie)
             .enter()
             .append("svg:g")
-            .attr("class", "slice");
+            .attr("class", arc);
  
         arcs.append("svg:path")
             .attr("fill", function(d, i) { return color(i); } )
