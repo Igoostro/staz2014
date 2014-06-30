@@ -1,3 +1,6 @@
+<?php
+var_dump($_SERVER);
+?>
 <html>
 <head>
     <meta charset="utf-8" />
