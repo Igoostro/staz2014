@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8" />
     <meta author="Igor Ostrowski" />
-    <base  href="<?=$_SERVER['HTTP_HOST']?>" />
+    <base href="<?='http://'.$_SERVER['HTTP_HOST']?>"/>
     <link rel="Stylesheet" type="text/css" href="style.css"/>
     
     <title>Countries and languages</title>
