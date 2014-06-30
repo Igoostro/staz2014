@@ -1,4 +1,6 @@
 <?php
+//Dodanie danych logowania z baza danych
+include 'sqllogin.php';
 $cd = htmlentities($_GET['code']);
 $connect = pg_connect("host=$host dbname=$db user=$user password=$pass") or die ("Blad polaczenia z baza\n");
 
@@ -28,8 +30,6 @@ while ($row0 = pg_fetch_row($result0)){
         <?php
         //Dodanie linków
         include 'links.php';
-        //Dodanie danych logowania z baza danych
-        include 'sqllogin.php';
         
         $language = array();
         $percentage = array();
