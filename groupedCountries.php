@@ -53,7 +53,6 @@
                     if($row1[0] != $lastLang){
                         $totalLangPopRound = floor($totalLangPop);
                         $GloPopPerUse = round($totalLangPop / $totalPop * 100, 2);
-                        //echo "<tr><td>$lastLang</td><td class='numbers'>$totalLangPopRound</td><td class='numbers'>$GloPopPerUse</td></tr>";
                         array_push($col1, $lastLang);
                         array_push($col2, $totalLangPopRound);
                         array_push($col3, $GloPopPerUse);
@@ -72,7 +71,7 @@
                 //Wyswietlenie ostatniego pobranego jezyka:
                 $totalLangPopRound = floor($totalLangPop);
                 $GloPopPerUse = round($totalLangPop / $totalPop * 100, 2);
-                //echo "<tr><td>$lastLang</td><td class='numbers'>$totalLangPopRound</td><td class='numbers'>$GloPopPerUse</td></tr>";
+                
                 array_push($col1, $lastLang);
                 array_push($col2, $totalLangPopRound);
                 array_push($col3, $GloPopPerUse);

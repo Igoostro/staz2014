@@ -1,5 +1,13 @@
 <?php
 $cd = htmlentities($_GET['code']);
+$connect = pg_connect("host=$host dbname=$db user=$user password=$pass") or die ("Blad polaczenia z baza\n");
+
+//Pobranie nazwy kraju z tablicy country
+$query0 = "SELECT name FROM country WHERE code='$cd'";
+$result0 = pg_query($connect, $query0) or die("Nie mozna wykonac zapytania: $query0\n");
+while ($row0 = pg_fetch_row($result0)){
+    $country = $row0[0];
+}
 ?>
 <html>
 <head>
@@ -15,7 +23,7 @@ $cd = htmlentities($_GET['code']);
 </head>
     <body>
         <div id="top">
-            <h1>Language use in <?php echo $cd;?></h1>
+            <h1>Language use in <?php echo $country;?></h1>
         </div>
         <?php
         //Dodanie linków
@@ -26,8 +34,6 @@ $cd = htmlentities($_GET['code']);
         $language = array();
         $percentage = array();
         
-        $connect = pg_connect("host=$host dbname=$db user=$user password=$pass") or die ("Blad polaczenia z baza\n");
-        
         //Zebranie danych o jezykach uzywanych w wtbranym kraju, z tablicy countryLanguage
         $query1 = "SELECT language, percentage FROM countryLanguage WHERE countrycode='$cd'";
         $result1 = pg_query($connect, $query1) or die("Nie mozna wykonac zapytania: $query1\n");
@@ -35,6 +41,7 @@ $cd = htmlentities($_GET['code']);
             array_push($language, $row1[0]);
             array_push($percentage, $row1[1]);
         }
+        pg_free_result($result0);
         pg_free_result($result1);
         pg_close($connect);
                 
