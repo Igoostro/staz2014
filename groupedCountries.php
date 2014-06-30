@@ -72,7 +72,7 @@
                 pg_free_result($result1);
                 pg_free_result($result2);
                 pg_close($connect);
-                ?>
+                
                 //Suma 95,38 przez zaokraglenia
                 ?>
         
