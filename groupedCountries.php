@@ -85,7 +85,7 @@
                 //Ostateczne sortowanie i wyswietlenie
                 array_multisort($col1, $col2, $col3);
                 while(sizeof($col1)!=0){
-                    echo "<tr><td>array_pop($col1)</td><td class='numbers'>array_pop($col2)</td><td class='numbers'>array_pop($col3)</td></tr>";
+                    echo '<tr><td>'.array_pop($col1).'</td><td class="numbers">'.array_pop($col2).'</td><td class="numbers">'.array_pop($col3).'</td></tr>';
                 }
                 //Suma 95,38 przez zaokraglenia
                 ?>
