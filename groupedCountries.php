@@ -68,6 +68,11 @@
                 $GloPopPerUse = round($totalLangPop / $totalPop * 100, 2);
                 echo "<tr><td>$lastLang</td><td class='numbers'>$totalLangPopRound</td><td class='numbers'>$GloPopPerUse</td></tr>";
                 
+                pg_free_result($result0);
+                pg_free_result($result1);
+                pg_free_result($result2);
+                pg_close($connect);
+                ?>
                 //Suma 95,38 przez zaokraglenia
                 ?>
         
